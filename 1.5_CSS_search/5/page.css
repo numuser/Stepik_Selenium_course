@@ -1,0 +1,45 @@
+/*
+Добавьте тексту "Cat doesn't like bananas!" синий цвет
+Не выбран заголовок страницы
+Не выбран подзаголовок страницы
+Не выбран текст с описанием вежливого кота на первой карточке
+Не выбран заголовок карточки с банановым котом
+HTML-файл остался неприкосновенным
+Селектор не скопирован из браузера
+*/
+
+.banana>p
+
+{
+    color:blue;
+}
+
+
+
+img {
+	height: 100px;
+}
+.card-body {
+    width: 200px;
+    border: 1px;
+    border: 1px solid rgba(0,0,0,.125);
+    padding-right: 15px;
+    padding-left: 15px;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.btn-group {
+    margin-bottom: 10px;
+}
+
+
+.column {
+	display: flex;
+}
+body {
+    color: black;
+}
