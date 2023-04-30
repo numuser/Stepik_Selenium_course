@@ -32,3 +32,4 @@ with webdriver.Chrome() as browser:
         submit_button.click()
 
         print(browser.switch_to.alert.text.split()[-1])
+

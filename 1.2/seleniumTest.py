@@ -10,4 +10,3 @@ driver.get('https://suninjuly.github.io/text_input_task.html')
 with webdriver.Chrome() as browser:
     browser.get("https://suninjuly.github.io/cats.html")
 
-
