@@ -15,9 +15,14 @@ def browser():
     browser.quit()
 
 
+@pytest.fixture(autouse=True)
+def prepare_date():
+    print("\npreparing some critical data for every test")
+
+
 class TestMainPage1():
-    # вызываем фикстуру в тесте, передав ее как параметр
-    def test_guest_should_see_login_link(self, browser):
+    # не передаём как параметр фикстуру prepare_data, но она все равно выполняется
+    def test_guest_should_see_login_link(self):
         browser.get(link)
         browser.find_element(By.CSS_SELECTOR, "#login_link")
 
