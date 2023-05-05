@@ -22,5 +22,7 @@ http://barancev.github.io/page-loading-complete/
 --- Conventions for Python test discovery ---
 https://docs.pytest.org/en/stable/explanation/goodpractices.html#conventions-for-python-test-discovery
 
---- command RU translation ---
+--- Command RU translation ---
 https://stepik.org/lesson/193188/step/5?discussion=7496647&unit=167629
+
+--- About fixtures ---
