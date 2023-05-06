@@ -10,19 +10,19 @@ def browser():
     print(f"\nstart browser for test ..")
     browser = webdriver.Chrome()
     yield browser
-    # этот код выполнится после завершения теста\\
+    # по завершении теста выполняется код, который идет после этой команды
     print("\nquit browser..")
     browser.quit()
 
 
-@pytest.fixture(autouse=True)
+@pytest.fixture(autouse=True)  # выполняется для каждой функции
 def prepare_date():
     print("\npreparing some critical data for every test")
 
 
 class TestMainPage1():
     # не передаём как параметр фикстуру prepare_data, но она все равно выполняется
-    def test_guest_should_see_login_link(self):
+    def test_guest_should_see_login_link(self, browser):
         browser.get(link)
         browser.find_element(By.CSS_SELECTOR, "#login_link")
 
