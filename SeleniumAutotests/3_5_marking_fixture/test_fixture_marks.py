@@ -30,6 +30,9 @@ class TestMainPage1():
         browser.get(link)
         browser.find_element(By.CSS_SELECTOR, "#login_link")
 
+    # Чтобы запустить только smoke-тесты для Windows 10, нужно использовать логическое И:
+
+    # pytest -s -v -m "smoke and win10" test_fixture81.py
     @pytest.mark.smoke
     @pytest.mark.win10
     def test_guest_should_see_login_link2(self, browser):
@@ -41,12 +44,8 @@ class TestMainPage1():
         browser.get(link)
         browser.find_element(By.CSS_SELECTOR, ".basket-mini .btn-group > a")
 
-
 # Чтобы запустить все тесты, не имеющие заданную маркировку, можно использовать инверсию.
 # Для запуска всех тестов, не отмеченных как smoke, нужно выполнить команду
 #
 # pytest -s -v -m "not smoke" test_fixture8.py
 
-# Чтобы запустить только smoke-тесты для Windows 10, нужно использовать логическое И:
-
-# pytest -s -v -m "smoke and win10" test_fixture81.py
