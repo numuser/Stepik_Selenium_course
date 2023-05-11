@@ -54,6 +54,8 @@
 
 [https://docs.pytest.org/en/stable/explanation/fixtures.html]
 
+[https://pytest-docs-ru.readthedocs.io/ru/latest/fixture.html?highlight=conftest]
+
 
 # --- Markdown Cheatsheet ---
 [https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links]
