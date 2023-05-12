@@ -1,16 +1,16 @@
-import time
+import pytest
 from logPass import login, password
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-link = "https://stepik.org/lesson/236895/step/1"
-
-
 class TestAuth():
 
-    def test_login_stepik(self, browser):
+    links = ["https://stepik.org/lesson/236895/step/1"]
+
+    @pytest.mark.parametrize("link", links)
+    def test_login_stepik(self, browser, link):
         browser.get(link)
         condition = WebDriverWait(browser, 5).until(
             EC.element_to_be_clickable((By.ID, "ember33"))
@@ -29,3 +29,5 @@ class TestAuth():
             log_button_alert.click()
 
 
+if __name__ == "__main__":
+    pytest.main()
