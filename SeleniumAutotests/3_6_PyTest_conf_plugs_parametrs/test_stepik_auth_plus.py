@@ -3,6 +3,7 @@ import math
 import pytest
 from logPass import login, password
 from selenium.webdriver.common.by import By
+from selenium.common import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -13,7 +14,7 @@ def answer_calc():
 
 class TestAuthAlien():
 
-    message = ""
+    assertMessages = ""
 
     links = [
         "https://stepik.org/lesson/236895/step/1",
@@ -24,17 +25,17 @@ class TestAuthAlien():
         "https://stepik.org/lesson/236903/step/1",
         "https://stepik.org/lesson/236904/step/1",
         "https://stepik.org/lesson/236905/step/1",
-             ]
+    ]
 
     @pytest.mark.parametrize("link", links)
+    # Передаем в параметрах фикстуру browser из файла conftest.py
     def test_login_stepik(self, browser, link):
         browser.get(link)
-        answer = answer_calc()
-        condition = WebDriverWait(browser, 5).until(
-            EC.element_to_be_clickable((By.ID, "ember33"))
+        condition = WebDriverWait(browser, 10).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, ".navbar__auth_login"))
         )
         if condition:
-            log_button = browser.find_element(By.ID, "ember33")
+            log_button = browser.find_element(By.CSS_SELECTOR, ".navbar__auth_login")
             log_button.click()
 
             mail_field = browser.find_element(By.ID, "id_login_email")
@@ -46,10 +47,35 @@ class TestAuthAlien():
             log_button_alert = browser.find_element(By.CSS_SELECTOR, "button.sign-form__btn")
             log_button_alert.click()
 
+            try:
+                # Блок для отлавливания solve again
+                browser.implicitly_wait(7)
+                button_again = browser.find_element(By.CSS_SELECTOR, "button.again-btn")
+                button_again.click()
 
-            answer_condition = WebDriverWait(browser, 5).until(
-            EC.visibility_of_element_located((By.ID, "ember86")))
-            if answer_condition:
-                answer_field = browser.find_element(By.ID, "ember86")
-                answer_field.send_keys(answer)
+            except NoSuchElementException:
+                print("\nMissing \"Solve Again\" button")
 
+            finally:
+                WebDriverWait(browser, 15).until(
+                    EC.element_to_be_clickable((By.TAG_NAME, "textarea"))
+                )
+                answer_field = browser.find_element(By.TAG_NAME, "textarea")
+                answer_field.send_keys(str(math.log(int(time.time()))))
+
+                browser.implicitly_wait(10)
+                submit_button = browser.find_element(By.CSS_SELECTOR, "button.submit-submission")
+                submit_button.click()
+
+                result = WebDriverWait(browser, 15).until(
+                    EC.presence_of_element_located(
+                        (By.CSS_SELECTOR, "p.smart-hints__hint")
+                                                   ))
+                if result.text != "Correct!":
+                    self.assertMessages += result.text
+                    print(self.assertMessages)
+                assert result.text == "Correct!"
+
+
+if __name__ == "__main__":
+    pytest.main()
