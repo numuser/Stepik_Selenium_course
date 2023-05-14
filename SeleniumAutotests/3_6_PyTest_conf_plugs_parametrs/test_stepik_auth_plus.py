@@ -14,7 +14,7 @@ def answer_calc():
 
 class TestAuthAlien():
 
-    assertMessages = ""
+    assertMessage = ""
 
     links = [
         "https://stepik.org/lesson/236895/step/1",
@@ -72,8 +72,8 @@ class TestAuthAlien():
                         (By.CSS_SELECTOR, "p.smart-hints__hint")
                                                    ))
                 if result.text != "Correct!":
-                    self.assertMessages += result.text
-                    print(self.assertMessages)
+                    self.assertMessage += result.text
+                    print(self.assertMessage)
                 assert result.text == "Correct!"
 
 
