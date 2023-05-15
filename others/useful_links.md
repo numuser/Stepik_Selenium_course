@@ -11,7 +11,9 @@
  
 [Что такое хорошие селекторы](http://barancev.github.io/good-locators/)
 
-[PATH переменная](http://barancev.github.io/what-is-path-env-var/) 
+[PATH переменная](http://barancev.github.io/what-is-path-env-var/)
+
+[Об ошибке при использовании webdriver manager'a и ее фиксе](https://stackoverflow.com/questions/64717302/deprecationwarning-executable-path-has-been-deprecated-selenium-python)
 
 
 # --- CSS selectors and XPath ---
