@@ -2,6 +2,6 @@
 .idea
 *.pyc
 *.pytest_cache
-SeleniumAutotests/3_6_PyTest_conf_plugs_parametrs/logPass.py
+SeleniumAutotests/PyTest_conf_plugs_parametrs/logPass.py
 *geckodriver.log
 
