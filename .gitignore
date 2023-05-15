@@ -3,3 +3,4 @@
 *.pyc
 *.pytest_cache
 SeleniumAutotests/3_6_PyTest_conf_plugs_parametrs/logPass.py
+SeleniumAutotests/3_6_PyTest_conf_plugs_parametrs/geckodriver.log
