@@ -8,9 +8,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-def answer_calc():
-    return str(math.log(int(time.time())))
-
+# Флаги для запуска.
+#  -s выводить в консоль принты,
+#  -v выводить полный отчёт.
 
 class TestAuthAlien():
 
@@ -47,8 +47,8 @@ class TestAuthAlien():
             log_button_alert = browser.find_element(By.CSS_SELECTOR, "button.sign-form__btn")
             log_button_alert.click()
 
+            # Блок для отлавливания solve again
             try:
-                # Блок для отлавливания solve again
                 browser.implicitly_wait(7)
                 button_again = browser.find_element(By.CSS_SELECTOR, "button.again-btn")
                 button_again.click()
@@ -70,7 +70,7 @@ class TestAuthAlien():
                 result = WebDriverWait(browser, 15).until(
                     EC.presence_of_element_located(
                         (By.CSS_SELECTOR, "p.smart-hints__hint")
-                                                   ))
+                    ))
                 if result.text != "Correct!":
                     self.assertMessage += result.text
                     print(self.assertMessage)
