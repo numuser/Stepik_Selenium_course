@@ -27,6 +27,14 @@
 [Little game about CSS search](https://flukeout.github.io/)
 
 
+# --- PyTest ---
+[Additional libs list](https://docs.pytest.org/en/latest/reference/plugin_list.html)
+
+[Conventions for Python test discovery](https://docs.pytest.org/en/stable/explanation/goodpractices.html#conventions-for-python-test-discovery)
+
+[Command RU translation](https://stepik.org/lesson/193188/step/5?discussion=7496647&unit=167629)
+
+
 # --- Selenium waits ---
 
 [Official documentation](https://www.selenium.dev/documentation/webdriver/waits/)
@@ -38,16 +46,6 @@
 [http://barancev.github.io/slow-loading-pages/]
 
 [http://barancev.github.io/page-loading-complete/]
-
-
-# --- Conventions for Python test discovery ---
-
-[https://docs.pytest.org/en/stable/explanation/goodpractices.html#conventions-for-python-test-discovery]
-
-
-# --- Command RU translation ---
-
-[https://stepik.org/lesson/193188/step/5?discussion=7496647&unit=167629]
 
 
 # --- About fixtures ---
