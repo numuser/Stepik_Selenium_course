@@ -8,9 +8,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-# Флаги для запуска.
-#  -s выводить в консоль принты,
-#  -v выводить полный отчёт.
+# Flags:
+#  -s -v
 
 class TestAuthAlien():
 
