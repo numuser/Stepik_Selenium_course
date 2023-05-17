@@ -56,6 +56,14 @@
 
 [https://pytest-docs-ru.readthedocs.io/ru/latest/fixture.html?highlight=conftest]
 
+# --- About PageObject ---
+
+[https://github.com/SeleniumHQ/selenium/wiki/PageObjects]
+
+[https://martinfowler.com/bliki/PageObject.html]
+
+[https://medium.com/tech-tajawal/page-object-model-pom-design-pattern-f9588630800b]
+
 
 # --- Markdown Cheatsheet ---
 [https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links]
