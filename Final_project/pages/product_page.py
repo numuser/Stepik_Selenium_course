@@ -3,11 +3,24 @@ from .locators import BookPageLocators
 
 
 class BookPage(BasePage):
+    def add_product_to_basket(self):
+        """
+        Проверка нажатия на кнопку ADD_TO_BASKET_BUTTON
+        Ожидаемый результат:
+        1. Кнопка add_to_basket существет и нажимается
+        2. После нажатия появляется алерт
+        3. Название товара в сообщении должно совпадать с тем товаром, который вы действительно добавили.
+        4. Стоимость корзины совпадает с ценой товара.
+        """
+        self.should_be_clickable_add_to_basket_button()
+        self.should_be_quiz_alert()
+        self.should_be_names_equal()
+        self.should_be_price_equal()
 
     def should_be_clickable_add_to_basket_button(self):
         assert self.is_element_clickable(
             *BookPageLocators.ADD_TO_BASKET_BTN
-        ), "~~~ Busket button isn't presented! ~~~"
+        ), "~~~ Basket button isn't presented! ~~~"
 
     def should_be_quiz_alert(self):
         assert self.solve_quiz_and_get_code(
