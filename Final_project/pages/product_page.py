@@ -3,7 +3,7 @@ from .locators import BookPageLocators
 
 
 class BookPage(BasePage):
-    def add_product_to_basket(self):
+    def add_product_to_basket_with_quiz_alert(self):
         """
         Проверка нажатия на кнопку ADD_TO_BASKET_BUTTON
         Ожидаемый результат:
@@ -12,12 +12,12 @@ class BookPage(BasePage):
         3. Название товара в сообщении должно совпадать с тем товаром, который вы действительно добавили.
         4. Стоимость корзины совпадает с ценой товара.
         """
-        self.should_be_clickable_add_to_basket_button()
+        self.add_to_basket()
         self.should_be_quiz_alert()
         self.should_be_names_equal()
         self.should_be_price_equal()
 
-    def should_be_clickable_add_to_basket_button(self):
+    def add_to_basket(self):
         assert self.is_element_clickable(
             *BookPageLocators.ADD_TO_BASKET_BTN
         ), "~~~ Basket button isn't presented! ~~~"
@@ -56,3 +56,13 @@ class BookPage(BasePage):
 
         assert book_price == basket_total,\
             "~~~ Basket total price and book price isn't equal! ~~~"
+
+    def should_not_success_alert(self):
+        assert self.is_not_element_present(
+            *BookPageLocators.SUCCESS_MESSAGE
+        ), "~~~ Success message shouldn't be here! ~~~"
+
+    def should_message_disappeared(self):
+        assert self.is_disappeared(
+            *BookPageLocators.SUCCESS_MESSAGE
+        ), "~~~ Success message not disappeared! ~~~"
