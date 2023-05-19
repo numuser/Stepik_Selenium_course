@@ -10,6 +10,6 @@ class BookLinks():
 
 
 class BookLinksParametrs():
-    PROMO_NEWYEAR = "?promo=newYear"
-    PROMO_NEWYEAR19 = "?promo=newYear2019"
+    PROMO_NEWYEAR = "?promo=newYear/"
+    PROMO_NEWYEAR19 = "?promo=newYear2019/"
     PROMO_OFFERS = [f"?promo=offer{i}/" for i in range(10)]
