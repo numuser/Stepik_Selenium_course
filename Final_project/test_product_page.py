@@ -8,7 +8,7 @@ from .pages.links import BookLinks, BookLinksParametrs
 
 def test_guest_can_add_book_to_basket(browser):
     page = BookPage(
-        browser, PageLinks.CATALOGUE_URL+BookLinks.SHELLCODERS_BOOK_PAGE+BookLinksParametrs.PROMO_NEWYEAR
+        browser, PageLinks.CATALOGUE_URL + BookLinks.SHELLCODERS_BOOK_PAGE + BookLinksParametrs.PROMO_NEWYEAR
     )
     page.open()
     page.should_be_clickable_add_to_basket_button()
@@ -19,7 +19,7 @@ def test_guest_can_add_book_to_basket(browser):
 
 def test_guest_can_add_other_book_to_basket(browser):
     page = BookPage(
-        browser, PageLinks.CATALOGUE_URL+BookLinks.CODERS_AT_WORK_BOOK_PAGE+BookLinksParametrs.PROMO_NEWYEAR19
+        browser, PageLinks.CATALOGUE_URL + BookLinks.CODERS_AT_WORK_BOOK_PAGE + BookLinksParametrs.PROMO_NEWYEAR19
     )
     page.open()
     page.add_product_to_basket()

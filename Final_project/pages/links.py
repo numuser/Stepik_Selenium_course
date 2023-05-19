@@ -1,7 +1,7 @@
 class PageLinks():
     MAIN_PAGE_URL = "https://selenium1py.pythonanywhere.com/"
     LOGIN_PAGE_URL = "https://selenium1py.pythonanywhere.com/accounts/login/"
-    CATALOGUE_URL = "https://selenium1py.pythonanywhere.com/catalogue/"
+    CATALOGUE_URL = "http://selenium1py.pythonanywhere.com/catalogue/"
 
 
 class BookLinks():
@@ -12,4 +12,4 @@ class BookLinks():
 class BookLinksParametrs():
     PROMO_NEWYEAR = "?promo=newYear"
     PROMO_NEWYEAR19 = "?promo=newYear2019"
-    PROMO_OFFERS = [f"?promo=offer{i}" for i in range(10)]
+    PROMO_OFFERS = [f"?promo=offer{i}/" for i in range(10)]

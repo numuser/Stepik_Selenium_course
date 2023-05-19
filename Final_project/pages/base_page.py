@@ -1,15 +1,26 @@
 import math
+from selenium.webdriver import Remote
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 
 
 class BasePage():
-    def __init__(self, browser, link, timeout=10):
+    def __init__(self, browser: Remote, link, timeout=10):
+        """Base class the web page
+
+        :param browser: Selenium WebDriver instance
+        :param link: Link to the page
+        :param timeout: Time to wait before raise in seconds
+        """
         self.browser = browser
         self.link = link
         self.browser.implicitly_wait(timeout)
 
     def open(self):
+        """Give web page in the browser
+
+        :return: None
+        """
         self.browser.get(self.link)
 
     def is_element_present(self, how_search, what_search: str):
@@ -33,16 +44,17 @@ class BasePage():
         """
         try:
             self.browser.implicitly_wait(5)
-            self.browser.find_element(how_search, what_search).click()
+            btn = self.browser.find_element(how_search, what_search)
+            btn.click()
         except NoSuchElementException:
             return False
         return True
 
     def solve_quiz_and_get_code(self):
+        self.browser.implicitly_wait(5)
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]
         answer = str(math.log(abs((12 * math.sin(float(x))))))
-        self.browser.implicitly_wait(5)
         alert.send_keys(answer)
         alert.accept()
         try:
@@ -50,6 +62,6 @@ class BasePage():
             print(f"Your code: {alert.text}")
             alert.accept()
         except NoAlertPresentException:
-            print("No second alert presented")
-            return False
+            print("\nNo second alert presented")
+            return True
         return True
