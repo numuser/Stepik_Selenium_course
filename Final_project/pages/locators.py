@@ -8,7 +8,7 @@ class BasePageLocators():
 
 class BookPageLocators():
     ADD_TO_BASKET_BTN = (By.CSS_SELECTOR, ".btn-add-to-basket")
-    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")
+    SUCCESS_MESSAGE = (By.CLASS_NAME, "alertinner")
     BOOK_NAME = (By.CSS_SELECTOR, ".product_main h1")
     BOOK_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
     BASKET_ITEM_NAME = (By.CSS_SELECTOR, ".alertinner strong")
