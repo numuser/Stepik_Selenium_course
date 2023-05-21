@@ -60,7 +60,7 @@ class BookPage(BasePage):
     def should_not_success_alert(self):
         assert self.is_not_element_present(
             *BookPageLocators.SUCCESS_MESSAGE
-        ), "~~~ Success message shouldn't be here! ~~~"
+        ), "~~~ Success message shouldn't be presented! ~~~"
 
     def should_message_disappeared(self):
         assert self.is_disappeared(

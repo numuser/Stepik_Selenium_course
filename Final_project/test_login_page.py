@@ -1,5 +1,5 @@
 # Flags:
-# -v --tb=line --language=en
+# -v --tb=line
 from .pages.login_page import LoginPage
 from .pages.links import PageLinks
 

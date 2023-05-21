@@ -8,7 +8,7 @@ from .locators import BasePageLocators
 
 class BasePage():
     def __init__(self, browser: Remote, link, timeout=10):
-        """Base class the web page
+        """ Base class the web page
 
         :param browser: Selenium WebDriver instance
         :param link: Link to the page
@@ -19,21 +19,31 @@ class BasePage():
         self.browser.implicitly_wait(timeout)
 
     def open(self):
-        """Give web page in the browser
+        """ Give web page in the browser
 
         :return: None
         """
         self.browser.get(self.link)
 
     def go_to_login_page(self):
-        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID)
+        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
 
+    def go_to_basket_page(self):
+        link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
+        link.click()
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(
+            *BasePageLocators.USER_ICON
+        ), "User icon is not presented, probably unauthorised user"
+
     def should_be_login_link(self):
-        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login button is not presented"
 
     def is_element_present(self, how_search, what_search: str):
-        """
+        """ Return True if element is present, else False
+
         :param how_search: By.CSS_SELECTOR, By.ID, etc.
         :param what_search: Selector
         :return: bool
