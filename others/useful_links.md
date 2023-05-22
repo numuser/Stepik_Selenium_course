@@ -18,7 +18,11 @@
 
 # --- CSS selectors and XPath ---
 
+[CSS selectors cheatsheet](https://puzzleweb.ru/css/selectors.php)
+
 [CSS selectors references](https://www.w3schools.com/cssref/css_selectors.php)
+
+[XPath cheatsheet](https://devhints.io/xpath)
 
 [XPath exemples](http://zvon.org/xxl/XPathTutorial/General_rus/examples.html)
 
@@ -64,6 +68,20 @@
 
 [https://medium.com/tech-tajawal/page-object-model-pom-design-pattern-f9588630800b]
 
+
+# --- Frameworks ---
+
+[Selene](https://github.com/yashaka/selene) - User-oriented Web UI browser tests in Python (Selenide port)
+
+[Splinter](https://splinter.readthedocs.io/en/latest/index.html) - is a Python framework that provides a simple and consistent interface for web application automation.
+
+[Robot Framework](https://robotframework.org/) - is a generic open source automation framework. It can be used for test automation and robotic process automation (RPA).
+
+[SeleniumBase](https://github.com/seleniumbase/SeleniumBase)
+
+[Python Page Object Model (PyPOM)](https://pypom.readthedocs.io/en/latest/) - is a Python library that provides a base page object model for use with Selenium or Splinter functional tests. R I P
+
+[Webium](https://github.com/wgnet/webium) - is a Page Object pattern implementation library for Python It allows you to extend WebElement class to your custom controls like Link, Button and group them as pages. R I P
 
 # --- Markdown Cheatsheet ---
 [https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links]
